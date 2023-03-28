@@ -8,18 +8,27 @@
 import Foundation
 
 struct Home: Codable {
-
-        let temperature: Double
-        let humidity: Double
-
-        init?(data: [String:Any]) {
-            guard let temperature = data["temperature"] as? Double,
-                  let humidity = data["humidity"] as? Double else {
-                return nil
-            }
-            self.temperature = temperature
-            self.humidity = humidity
+    
+    let temperature: Int
+    let lamp: Bool
+    let gas: Bool
+    let camera: Bool
+    let ventilation: Bool
+    
+    init?(data: [String:Any]) {
+        guard let temperature = data["temperature"] as? Int,
+              let gas = data["gas"] as? Bool,
+              let camera = data["camera"] as? Bool,
+              let ventilation = data["ventilation"] as? Bool,
+              let lamp = data["lamp"] as? Bool else {
+            return nil
         }
-
+        self.temperature = temperature
+        self.lamp = lamp
+        self.gas = gas
+        self.camera = camera
+        self.ventilation = ventilation
+    }
+    
     
 }
