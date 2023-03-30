@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D514FBB529D5A23100A3F658 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D514FBB429D5A23100A3F658 /* Slider.swift */; };
 		D54C14EE29D0D8B40011E86B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54C14ED29D0D8B40011E86B /* AppDelegate.swift */; };
 		D54C14F029D0D8B40011E86B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54C14EF29D0D8B40011E86B /* SceneDelegate.swift */; };
 		D54C14F229D0D8B40011E86B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54C14F129D0D8B40011E86B /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 		D54C150F29D17D870011E86B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54C150E29D17D870011E86B /* Home.swift */; };
 		D54C151829D182AF0011E86B /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54C151729D182AF0011E86B /* Color.xcassets */; };
 		D54C151B29D182C60011E86B /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54C151A29D182C60011E86B /* Icon.xcassets */; };
+		D55945BC29D46D7A00E2A439 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55945BB29D46D7A00E2A439 /* LocationManager.swift */; };
 		D5ADD85E29D2CD1D00D2A11A /* Gilroy Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5ADD85B29D2CD1D00D2A11A /* Gilroy Bold.otf */; };
 		D5ADD85F29D2CD1D00D2A11A /* Gilroy BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5ADD85C29D2CD1D00D2A11A /* Gilroy BlackItalic.otf */; };
 		D5ADD86029D2CD1D00D2A11A /* Gilroy Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5ADD85D29D2CD1D00D2A11A /* Gilroy Black.otf */; };
@@ -50,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D514FBB429D5A23100A3F658 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		D54C14EA29D0D8B40011E86B /* HomeVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54C14ED29D0D8B40011E86B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D54C14EF29D0D8B40011E86B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		D54C150E29D17D870011E86B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D54C151729D182AF0011E86B /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		D54C151A29D182C60011E86B /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
+		D55945BB29D46D7A00E2A439 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D5ADD85B29D2CD1D00D2A11A /* Gilroy Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy Bold.otf"; sourceTree = "<group>"; };
 		D5ADD85C29D2CD1D00D2A11A /* Gilroy BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy BlackItalic.otf"; sourceTree = "<group>"; };
 		D5ADD85D29D2CD1D00D2A11A /* Gilroy Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy Black.otf"; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				D54C151529D1825F0011E86B /* Extension */,
+				D55945BB29D46D7A00E2A439 /* LocationManager.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 		D54C151329D182200011E86B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D514FBB429D5A23100A3F658 /* Slider.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,9 +371,11 @@
 				D5DAF34B29D1908A00786E53 /* Weather.swift in Sources */,
 				D54C150F29D17D870011E86B /* Home.swift in Sources */,
 				D54C14F029D0D8B40011E86B /* SceneDelegate.swift in Sources */,
+				D55945BC29D46D7A00E2A439 /* LocationManager.swift in Sources */,
 				D5DAF34729D1902100786E53 /* WeatherHelper.swift in Sources */,
 				D5DAF34229D18F2300786E53 /* NetworkHelper.swift in Sources */,
 				D5ADD88429D2DA1200D2A11A /* User.swift in Sources */,
+				D514FBB529D5A23100A3F658 /* Slider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,11 +525,14 @@
 				DEVELOPMENT_TEAM = U4CM69XWB9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HomeVision/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to show it on the map.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show it on the map.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,11 +559,14 @@
 				DEVELOPMENT_TEAM = U4CM69XWB9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HomeVision/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to show it on the map.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show it on the map.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
