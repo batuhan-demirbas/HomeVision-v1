@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Sun 1.png",
+      "filename" : "Cloud-,Sun 2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Sun 1@2x.png",
+      "filename" : "Cloud-,Sun 2@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Sun 1@3x.png",
+      "filename" : "Cloud-,Sun 2@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
