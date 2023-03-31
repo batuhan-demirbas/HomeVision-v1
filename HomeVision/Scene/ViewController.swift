@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var temperatureIcon: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var locationButton: UIButton!
     
@@ -47,6 +48,12 @@ class ViewController: UIViewController {
     var city : String?
     private let database = Database.database().reference()
     
+    var currentIndex = 0
+    var timer: Timer?
+    
+    var temperature: Int = 0
+    var humidity: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,6 +68,8 @@ class ViewController: UIViewController {
         dateLabel.text = formattedDateAndDay.date
         dayLabel.text = formattedDateAndDay.day
         
+        timer = Timer.scheduledTimer(timeInterval: 7.0, target: self, selector: #selector(updateWeather), userInfo: nil, repeats: true)
+
         ventilationSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
         
         database.child("user").getData(completion:  { error, snapshot in
@@ -100,7 +109,11 @@ class ViewController: UIViewController {
         }
         
         database.child("home").child("temperature").observe(.value) { snapshot in
-            self.temperatureLabel.text = "\(snapshot.value ?? 0)°C"
+            self.temperature = snapshot.value as! Int
+        }
+        
+        database.child("home").child("humidity").observe(.value) { snapshot in
+            self.humidity = snapshot.value as! Int
         }
         
         database.child("home").child("camera").observe(.value) { snapshot in
@@ -142,6 +155,17 @@ class ViewController: UIViewController {
             }
             weatherIcon.tintColor = UIColor(named: "primary")
             weatherLabel.text = convertKelvinToCelsius(Kelvin: viewModel.weather?.main?.temp ?? 273.15)
+            
+            UIView.animate(withDuration: 5.0, delay: 0, options: [.repeat, .curveEaseInOut], animations: {
+                if temperatureLabel.text == convertKelvinToCelsius(Kelvin: viewModel.weather?.main?.temp ?? 273.15) {
+                    self.temperatureLabel.text = String(weather?.main?.humidity ?? 0)
+                    self.temperatureIcon.image = UIImage(named: "droplet")
+                } else {
+                    temperatureLabel.text = convertKelvinToCelsius(Kelvin: viewModel.weather?.main?.temp ?? 273.15)
+                    self.temperatureIcon.image = UIImage(named: "temperature")
+                }
+            })
+            
         }
     }
     
@@ -209,8 +233,8 @@ class ViewController: UIViewController {
                 ventilationSlider.isEnabled = true
                 ventilationStateLabel.text = "on"
                 UIView.animate(withDuration: animationDuration, delay: 0, options: [.curveLinear, .repeat], animations: {
-                            self.ventilationIcon.transform = self.ventilationIcon.transform.rotated(by: .pi)
-                        })
+                    self.ventilationIcon.transform = self.ventilationIcon.transform.rotated(by: .pi)
+                })
                 database.child("home").child("ventilation").setValue(true)
                 
             } else {
@@ -267,7 +291,7 @@ class ViewController: UIViewController {
                 self?.defaults.set(cityName?.lowercased(), forKey: "City")
                 self?.viewModelConfiguration()
             }
-
+            
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 
@@ -278,6 +302,29 @@ class ViewController: UIViewController {
     @IBAction func ventilationSliderDidChangeValue(_ sender: UISlider) {
         animationDuration = 1 / Double(sender.value) * 1.5
         setState(sensorType:"ventilation", isOn: true)
+    }
+    
+    @objc func updateWeather() {
+        // Metni ve resmi güncelle
+            currentIndex = (currentIndex + 1) % 2
+            
+            // Animasyonlu şekilde metni ve resmi güncelle
+        UIView.transition(with: temperatureLabel, duration: 0.7, options: [.transitionCrossDissolve], animations: {
+                switch self.currentIndex {
+                case 0:
+                    self.temperatureLabel.text = String(self.temperature).addDegreeSymbol()
+                    UIView.transition(with: self.temperatureIcon, duration: 0.7, options: [.transitionCrossDissolve], animations: {
+                        self.temperatureIcon.image = UIImage(named: "temperature")
+                    }, completion: nil)
+                case 1:
+                    self.temperatureLabel.text = "%" + String(self.humidity)
+                    UIView.transition(with: self.temperatureIcon, duration: 0.7, options: [.transitionCrossDissolve], animations: {
+                        self.temperatureIcon.image = UIImage(named: "droplet")
+                    }, completion: nil)
+                default:
+                    1
+                }
+            }, completion: nil)
     }
     
 }

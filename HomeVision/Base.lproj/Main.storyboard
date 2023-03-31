@@ -78,23 +78,6 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YIe-95-7wb">
-                                                <rect key="frame" x="16" y="85.333333333333343" width="79" height="46.333333333333343"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyX-2Z-SF6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="14"/>
-                                                        <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
-                                                        <color key="textColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temp°C  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzh-26-6kp">
-                                                        <rect key="frame" x="0.0" y="22" width="79" height="24.333333333333329"/>
-                                                        <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="20"/>
-                                                        <color key="textColor" red="0.80000000000000004" green="1" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EPv-mu-reL">
                                                 <rect key="frame" x="293.66666666666669" y="16" width="35.333333333333314" height="33"/>
                                                 <subviews>
@@ -129,22 +112,51 @@
                                                     <action selector="locationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p0l-Xj-2kx"/>
                                                 </connections>
                                             </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BZA-ev-0Xa">
+                                                <rect key="frame" x="16" y="93.666666666666686" width="103" height="38"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyX-2Z-SF6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="103" height="14"/>
+                                                        <fontDescription key="fontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="12"/>
+                                                        <color key="textColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8m-Va-do6">
+                                                        <rect key="frame" x="0.0" y="14" width="103" height="24"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temp°C  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzh-26-6kp">
+                                                                <rect key="frame" x="0.0" y="0.0" width="79" height="24"/>
+                                                                <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="20"/>
+                                                                <color key="textColor" red="0.80000000000000004" green="1" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temperature" translatesAutoresizingMaskIntoConstraints="NO" id="I1y-PE-yRT">
+                                                                <rect key="frame" x="79" y="0.0" width="24" height="24"/>
+                                                                <color key="tintColor" red="0.80000000000000004" green="1" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="24" id="3fC-2r-DS3"/>
+                                                                    <constraint firstAttribute="height" constant="24" id="YdO-PV-Sds"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="YIe-95-7wb" firstAttribute="leading" secondItem="Ohr-cU-Soh" secondAttribute="leading" constant="16" id="2dI-El-AfR"/>
                                             <constraint firstAttribute="bottom" secondItem="yES-ej-cJz" secondAttribute="bottom" constant="16" id="4Z8-bq-7JG"/>
                                             <constraint firstItem="IuP-SJ-myT" firstAttribute="top" secondItem="Ohr-cU-Soh" secondAttribute="top" id="5ew-Sm-h1s"/>
                                             <constraint firstAttribute="bottom" secondItem="IuP-SJ-myT" secondAttribute="bottom" id="Adg-ic-r2X"/>
                                             <constraint firstAttribute="trailing" secondItem="IuP-SJ-myT" secondAttribute="trailing" id="D4S-u6-fds"/>
-                                            <constraint firstAttribute="bottom" secondItem="YIe-95-7wb" secondAttribute="bottom" constant="16" id="EIm-Bl-fgg"/>
                                             <constraint firstItem="dja-77-c3J" firstAttribute="leading" secondItem="Ohr-cU-Soh" secondAttribute="leading" constant="16" id="M3W-2a-79h"/>
                                             <constraint firstItem="IuP-SJ-myT" firstAttribute="leading" secondItem="Ohr-cU-Soh" secondAttribute="leading" id="PUc-xB-hdh"/>
                                             <constraint firstAttribute="trailing" secondItem="EPv-mu-reL" secondAttribute="trailing" constant="16" id="QGk-HW-snB"/>
                                             <constraint firstItem="dja-77-c3J" firstAttribute="top" secondItem="Ohr-cU-Soh" secondAttribute="top" constant="16" id="UI4-PM-NMW"/>
+                                            <constraint firstItem="BZA-ev-0Xa" firstAttribute="leading" secondItem="Ohr-cU-Soh" secondAttribute="leading" constant="16" id="hMX-52-LHQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="BZA-ev-0Xa" secondAttribute="bottom" constant="16" id="mfO-QF-edC"/>
                                             <constraint firstAttribute="trailing" secondItem="yES-ej-cJz" secondAttribute="trailing" constant="16" id="oxt-4E-thr"/>
                                             <constraint firstAttribute="width" secondItem="Ohr-cU-Soh" secondAttribute="height" multiplier="327:140" id="w2Q-QM-MUy"/>
-                                            <constraint firstItem="yES-ej-cJz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YIe-95-7wb" secondAttribute="trailing" constant="8" symbolic="YES" id="wo6-fv-Ygh"/>
                                             <constraint firstItem="EPv-mu-reL" firstAttribute="top" secondItem="Ohr-cU-Soh" secondAttribute="top" constant="16" id="xwS-kO-Edz"/>
                                         </constraints>
                                     </view>
@@ -529,6 +541,7 @@
                         <outlet property="lampSwitch" destination="qf6-xt-jMy" id="GM1-7u-CZl"/>
                         <outlet property="locationButton" destination="yES-ej-cJz" id="2IZ-tA-UWq"/>
                         <outlet property="nameLabel" destination="gzH-ix-twE" id="ByR-3j-aE5"/>
+                        <outlet property="temperatureIcon" destination="I1y-PE-yRT" id="g7v-rz-ulC"/>
                         <outlet property="temperatureLabel" destination="uzh-26-6kp" id="G6E-Dd-WXU"/>
                         <outlet property="ventilationIcon" destination="Jl9-VO-WIq" id="sDA-Sx-98G"/>
                         <outlet property="ventilationSlider" destination="RDv-Ks-eN6" id="6tS-WP-9r8"/>
@@ -553,6 +566,7 @@
         <image name="lamp" width="24" height="24"/>
         <image name="pin" width="12" height="12"/>
         <image name="sun" width="24" height="24"/>
+        <image name="temperature" width="24" height="24"/>
         <image name="warning" width="12" height="12"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

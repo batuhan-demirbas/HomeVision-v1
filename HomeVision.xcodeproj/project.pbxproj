@@ -16,11 +16,13 @@
 		D54C14FA29D0D8B40011E86B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54C14F829D0D8B40011E86B /* LaunchScreen.storyboard */; };
 		D54C150329D0DA1F0011E86B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D54C150229D0DA1F0011E86B /* FirebaseDatabase */; };
 		D54C150529D0DA1F0011E86B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D54C150429D0DA1F0011E86B /* FirebaseStorage */; };
-		D54C150B29D17AD90011E86B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D54C150A29D17AD90011E86B /* GoogleService-Info.plist */; };
 		D54C150F29D17D870011E86B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54C150E29D17D870011E86B /* Home.swift */; };
 		D54C151829D182AF0011E86B /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54C151729D182AF0011E86B /* Color.xcassets */; };
 		D54C151B29D182C60011E86B /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54C151A29D182C60011E86B /* Icon.xcassets */; };
 		D55945BC29D46D7A00E2A439 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55945BB29D46D7A00E2A439 /* LocationManager.swift */; };
+		D56D629329D6E8B80055BCDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D56D629229D6E8B80055BCDD /* GoogleService-Info.plist */; };
+		D56D629729D6E90F0055BCDD /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D629629D6E90F0055BCDD /* NetworkHelper.swift */; };
+		D56D629929D6FA820055BCDD /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D629829D6FA820055BCDD /* String+Extention.swift */; };
 		D5ADD85E29D2CD1D00D2A11A /* Gilroy Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5ADD85B29D2CD1D00D2A11A /* Gilroy Bold.otf */; };
 		D5ADD85F29D2CD1D00D2A11A /* Gilroy BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5ADD85C29D2CD1D00D2A11A /* Gilroy BlackItalic.otf */; };
 		D5ADD86029D2CD1D00D2A11A /* Gilroy Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5ADD85D29D2CD1D00D2A11A /* Gilroy Black.otf */; };
@@ -43,7 +45,6 @@
 		D5ADD88229D2CD5400D2A11A /* Gilroy SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5ADD87129D2CD5400D2A11A /* Gilroy SemiBoldItalic.otf */; };
 		D5ADD88429D2DA1200D2A11A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ADD88329D2DA1200D2A11A /* User.swift */; };
 		D5DAF33E29D18E7F00786E53 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D5DAF33D29D18E7F00786E53 /* Alamofire */; };
-		D5DAF34229D18F2300786E53 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAF34129D18F2300786E53 /* NetworkHelper.swift */; };
 		D5DAF34429D18FDA00786E53 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAF34329D18FDA00786E53 /* NetworkManager.swift */; };
 		D5DAF34729D1902100786E53 /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAF34629D1902100786E53 /* WeatherHelper.swift */; };
 		D5DAF34929D1905300786E53 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAF34829D1905300786E53 /* WeatherManager.swift */; };
@@ -61,11 +62,13 @@
 		D54C14F629D0D8B40011E86B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D54C14F929D0D8B40011E86B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D54C14FB29D0D8B40011E86B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D54C150A29D17AD90011E86B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D54C150E29D17D870011E86B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D54C151729D182AF0011E86B /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		D54C151A29D182C60011E86B /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
 		D55945BB29D46D7A00E2A439 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D56D629229D6E8B80055BCDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D56D629629D6E90F0055BCDD /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		D56D629829D6FA820055BCDD /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
 		D5ADD85B29D2CD1D00D2A11A /* Gilroy Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy Bold.otf"; sourceTree = "<group>"; };
 		D5ADD85C29D2CD1D00D2A11A /* Gilroy BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy BlackItalic.otf"; sourceTree = "<group>"; };
 		D5ADD85D29D2CD1D00D2A11A /* Gilroy Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy Black.otf"; sourceTree = "<group>"; };
@@ -87,7 +90,6 @@
 		D5ADD87029D2CD5400D2A11A /* Gilroy HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy HeavyItalic.otf"; sourceTree = "<group>"; };
 		D5ADD87129D2CD5400D2A11A /* Gilroy SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy SemiBoldItalic.otf"; sourceTree = "<group>"; };
 		D5ADD88329D2DA1200D2A11A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D5DAF34129D18F2300786E53 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		D5DAF34329D18FDA00786E53 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D5DAF34629D1902100786E53 /* WeatherHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHelper.swift; sourceTree = "<group>"; };
 		D5DAF34829D1905300786E53 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 				D54C14F329D0D8B40011E86B /* Main.storyboard */,
 				D54C14F829D0D8B40011E86B /* LaunchScreen.storyboard */,
 				D54C14FB29D0D8B40011E86B /* Info.plist */,
-				D54C150A29D17AD90011E86B /* GoogleService-Info.plist */,
+				D56D629229D6E8B80055BCDD /* GoogleService-Info.plist */,
 			);
 			path = HomeVision;
 			sourceTree = "<group>";
@@ -203,6 +205,7 @@
 		D54C151529D1825F0011E86B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D56D629829D6FA820055BCDD /* String+Extention.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -237,8 +240,8 @@
 		D5DAF33F29D18F0400786E53 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				D5DAF34129D18F2300786E53 /* NetworkHelper.swift */,
 				D5DAF34329D18FDA00786E53 /* NetworkManager.swift */,
+				D56D629629D6E90F0055BCDD /* NetworkHelper.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -334,13 +337,13 @@
 				D5ADD87A29D2CD5400D2A11A /* Gilroy ThinItalic.otf in Resources */,
 				D5ADD86029D2CD1D00D2A11A /* Gilroy Black.otf in Resources */,
 				D5ADD88029D2CD5400D2A11A /* Gilroy RegularItalic.otf in Resources */,
-				D54C150B29D17AD90011E86B /* GoogleService-Info.plist in Resources */,
 				D5ADD87C29D2CD5400D2A11A /* Gilroy ExtraBold.otf in Resources */,
 				D54C151829D182AF0011E86B /* Color.xcassets in Resources */,
 				D5ADD87429D2CD5400D2A11A /* Gilroy Light.otf in Resources */,
 				D5ADD87529D2CD5400D2A11A /* Gilroy MediumItalic.otf in Resources */,
 				D5ADD87629D2CD5400D2A11A /* Gilroy Medium.otf in Resources */,
 				D5ADD87B29D2CD5400D2A11A /* Gilroy Regular.otf in Resources */,
+				D56D629329D6E8B80055BCDD /* GoogleService-Info.plist in Resources */,
 				D54C14F729D0D8B40011E86B /* Assets.xcassets in Resources */,
 				D5ADD87329D2CD5400D2A11A /* Gilroy SemiBold.otf in Resources */,
 				D5ADD87229D2CD5400D2A11A /* Gilroy Heavy.otf in Resources */,
@@ -363,17 +366,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D56D629729D6E90F0055BCDD /* NetworkHelper.swift in Sources */,
 				D5DAF34429D18FDA00786E53 /* NetworkManager.swift in Sources */,
 				D54C14F229D0D8B40011E86B /* ViewController.swift in Sources */,
 				D5DAF34929D1905300786E53 /* WeatherManager.swift in Sources */,
 				D5DAF34E29D191B500786E53 /* HomeViewModel.swift in Sources */,
+				D56D629929D6FA820055BCDD /* String+Extention.swift in Sources */,
 				D54C14EE29D0D8B40011E86B /* AppDelegate.swift in Sources */,
 				D5DAF34B29D1908A00786E53 /* Weather.swift in Sources */,
 				D54C150F29D17D870011E86B /* Home.swift in Sources */,
 				D54C14F029D0D8B40011E86B /* SceneDelegate.swift in Sources */,
 				D55945BC29D46D7A00E2A439 /* LocationManager.swift in Sources */,
 				D5DAF34729D1902100786E53 /* WeatherHelper.swift in Sources */,
-				D5DAF34229D18F2300786E53 /* NetworkHelper.swift in Sources */,
 				D5ADD88429D2DA1200D2A11A /* User.swift in Sources */,
 				D514FBB529D5A23100A3F658 /* Slider.swift in Sources */,
 			);
