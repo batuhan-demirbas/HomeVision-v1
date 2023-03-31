@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var gasStateLabel: UILabel!
     @IBOutlet weak var gasWarningIcon: UIImageView!
     
+    @IBOutlet weak var lampIconView: UIView!
     @IBOutlet weak var lampStateLabel: UILabel!
     @IBOutlet weak var lampSwitch: UISwitch!
     
@@ -86,12 +87,20 @@ class ViewController: UIViewController {
             self.setState(sensorType: "camera", isOn: home?.camera ?? false)
         })
         
+        database.child("user").child("name").observe(.value) { snapshot in
+            self.nameLabel.text = "hi, \((snapshot.value as? String)?.lowercased() ?? "null")"
+        }
+        
         database.child("home").child("gas").observe(.value) { snapshot in
             if (snapshot.value) as! Int  == 1 {
                 self.setState(sensorType: "gas", isOn: true)
             } else {
                 self.setState(sensorType: "gas", isOn: false)
             }
+        }
+        
+        database.child("home").child("temperature").observe(.value) { snapshot in
+            self.temperatureLabel.text = "\(snapshot.value ?? 0)°C"
         }
         
         database.child("home").child("camera").observe(.value) { snapshot in
@@ -170,7 +179,12 @@ class ViewController: UIViewController {
                 gasStateLabel.text = "gas detected"
                 gasStateLabel.textColor = UIColor(named: "warning")
                 gasWarningIcon.isHidden = false
+                UIView.animate(withDuration: 1, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+                    self.gasIconView.alpha = 0.5
+                }, completion: nil)
             } else {
+                gasIconView.layer.removeAllAnimations()
+                gasIconView.alpha = 1.0
                 gasIcon.tintColor = UIColor(named: "secondry")
                 gasIconView.backgroundColor = .white
                 gasStateLabel.text = "no gas detected"
@@ -179,10 +193,12 @@ class ViewController: UIViewController {
             }
         case "lamp":
             if isOn {
+                lampIconView.backgroundColor = UIColor(named: "lamp")
                 lampSwitch.isOn = true
                 lampStateLabel.text = "on"
                 database.child("home").child("lamp").setValue(true)
             } else {
+                lampIconView.backgroundColor = .white
                 lampSwitch.isOn = false
                 lampStateLabel.text = "off"
                 database.child("home").child("lamp").setValue(false)
@@ -211,9 +227,14 @@ class ViewController: UIViewController {
                 cameraStateLabel.text = "motion detected"
                 cameraStateLabel.textColor = UIColor(named: "warning")
                 cameraWarningIcon.isHidden = false
+                UIView.animate(withDuration: 1, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+                    self.cameraIconView.alpha = 0.5
+                }, completion: nil)
             } else {
-                cameraIcon.tintColor = UIColor(named: "secondry")
+                cameraIconView.layer.removeAllAnimations()
                 cameraIconView.backgroundColor = .white
+                cameraIconView.alpha = 1.0
+                cameraIcon.tintColor = UIColor(named: "secondry")
                 cameraStateLabel.text = "no motion detected"
                 cameraStateLabel.textColor = UIColor(named: "light")
                 cameraWarningIcon.isHidden = true

@@ -524,6 +524,7 @@
                         <outlet property="gasIconView" destination="4YI-8R-tay" id="hSl-84-D1u"/>
                         <outlet property="gasStateLabel" destination="Ohc-7y-CwW" id="j8B-VX-4PK"/>
                         <outlet property="gasWarningIcon" destination="BWX-Ql-Lqb" id="IIZ-to-Qyp"/>
+                        <outlet property="lampIconView" destination="bJK-as-UMF" id="2Qg-Zu-yRK"/>
                         <outlet property="lampStateLabel" destination="Wg3-An-LYY" id="cCW-aP-iZX"/>
                         <outlet property="lampSwitch" destination="qf6-xt-jMy" id="GM1-7u-CZl"/>
                         <outlet property="locationButton" destination="yES-ej-cJz" id="2IZ-tA-UWq"/>
