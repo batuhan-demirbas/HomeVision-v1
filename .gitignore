@@ -1,2 +1,77 @@
-# Ignore GoogleService-Info.plist file
-GoogleService-Info.plist
+# Xcode
+#
+## Build generated
+build/
+DerivedData/
+#
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+#
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+#
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.swiftdoc
+*.swiftmodule
+*.xib
+*.storyboard
+#
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+#
+## Carthage
+Carthage/Build
+#
+## CocoaPods
+Pods/
+*.lock
+#
+## fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+#
+## Firebase
+/GoogleService-Info.plist
+#
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+#
+## Archives
+*.zip
+*.rar
+*.gz
+*.bz2
+*.7z
+#
+## Package Files
+*.pkg
+*.dmg
+*.pmdoc
+*.pkgproj
+#
+## Swift Package Manager
+# Packages/
+.build/
+# Package directories
+.idea/
+.project
+*.xcodeproj
