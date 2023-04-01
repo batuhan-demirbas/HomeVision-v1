@@ -14,8 +14,8 @@ class HomeViewModel {
     var errorCallback: ((String)->())?
     var succesCallback: (()->())?
     
-    func getCurrentWeather(cityName: String) {
-        manager.getCurrentWeather (cityName: cityName, complete: { [weak self] weather, error in
+    func getCurrentWeather(lat: String, lon: String) {
+        manager.getCurrentWeather (lat: lat, lon: lon, complete: { [weak self] weather, error in
             guard let self = self else { return }
             if let error = error {
                 self.errorCallback?(error.localizedDescription)

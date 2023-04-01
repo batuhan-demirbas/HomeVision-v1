@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var gasWarningIcon: UIImageView!
     
     @IBOutlet weak var lampIconView: UIView!
+    @IBOutlet weak var lampIcon: UIImageView!
     @IBOutlet weak var lampStateLabel: UILabel!
     @IBOutlet weak var lampSwitch: UISwitch!
     
@@ -46,6 +47,8 @@ class ViewController: UIViewController {
     var animationDuration: Double = 2
     var weather: Weather?
     var city : String?
+    var lat : String?
+    var lon : String?
     private let database = Database.database().reference()
     
     var currentIndex = 0
@@ -57,7 +60,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        city = defaults.string(forKey: "City") ?? "izmir"
+        city = defaults.string(forKey: "City") ?? "ankara"
+        lat = defaults.string(forKey: "Lat") ?? "39,9249354"
+        lon = defaults.string(forKey: "Lon") ?? "32,8366406"
         locationButton.titleLabel?.text = city?.capitalized
         
         locationManager = CLLocationManager()
@@ -129,7 +134,7 @@ class ViewController: UIViewController {
     }
     
     fileprivate func viewModelConfiguration() {
-        viewModel.getCurrentWeather(cityName: city ?? "izmir")
+        viewModel.getCurrentWeather(lat: lat! , lon: lon! )
         viewModel.errorCallback = { [weak self] errorMessage in
             print("error: \(errorMessage)")
         }
@@ -217,12 +222,12 @@ class ViewController: UIViewController {
             }
         case "lamp":
             if isOn {
-                lampIconView.backgroundColor = UIColor(named: "lamp")
+                lampIcon.image = UIImage(named: "lamp.on")
                 lampSwitch.isOn = true
                 lampStateLabel.text = "on"
                 database.child("home").child("lamp").setValue(true)
             } else {
-                lampIconView.backgroundColor = .white
+                lampIcon.image = UIImage(named: "lamp.off")
                 lampSwitch.isOn = false
                 lampStateLabel.text = "off"
                 database.child("home").child("lamp").setValue(false)
@@ -279,14 +284,13 @@ class ViewController: UIViewController {
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {
         LocationManager.shared.getUserLocation {[weak self] location in
-            let longitude = location.coordinate.longitude
-            let latitude = location.coordinate.latitude
-            LocationManager.shared.reverseGeocoding(latitude: latitude, longitude: longitude) { placemark in
+            self?.lon = String(location.coordinate.longitude)
+            self?.lat = String(location.coordinate.latitude)
+            self?.defaults.set(self?.lat, forKey: "Lat")
+            self?.defaults.set(self?.lon, forKey: "Lon")
+            LocationManager.shared.reverseGeocoding(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude) { placemark in
                 let cityName = placemark.administrativeArea
                 self?.locationButton.setTitle(cityName, for: .normal)
-                if let customFont = UIFont(name: "Gilroy", size: 11) {
-                    self?.locationButton.titleLabel?.font = customFont
-                }
                 self?.city = cityName?.lowercased() ?? "Ankara"
                 self?.defaults.set(cityName?.lowercased(), forKey: "City")
                 self?.viewModelConfiguration()

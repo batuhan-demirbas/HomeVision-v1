@@ -95,15 +95,15 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yES-ej-cJz">
-                                                <rect key="frame" x="274.66666666666669" y="111.66666666666666" width="54.333333333333314" height="20"/>
+                                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yES-ej-cJz">
+                                                <rect key="frame" x="270.66666666666669" y="111.66666666666666" width="58.333333333333314" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Df7-1h-IsH"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" image="pin" title="city">
-                                                    <backgroundConfiguration key="background" cornerRadius="16"/>
+                                                <buttonConfiguration key="configuration" style="filled" image="pin" title="city" imagePadding="4">
+                                                    <backgroundConfiguration key="background" cornerRadius="16" strokeWidth="0.0"/>
                                                     <fontDescription key="titleFontDescription" name="Gilroy-Regular" family="Gilroy" pointSize="11"/>
                                                     <color key="baseForegroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -274,7 +274,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJK-as-UMF">
                                                                 <rect key="frame" x="8" y="8" width="40" height="40"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp" translatesAutoresizingMaskIntoConstraints="NO" id="VQy-8Y-nbd">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamp.off" translatesAutoresizingMaskIntoConstraints="NO" id="VQy-8Y-nbd">
                                                                         <rect key="frame" x="8" y="8" width="24" height="24"/>
                                                                         <color key="tintColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                         <constraints>
@@ -536,6 +536,7 @@
                         <outlet property="gasIconView" destination="4YI-8R-tay" id="hSl-84-D1u"/>
                         <outlet property="gasStateLabel" destination="Ohc-7y-CwW" id="j8B-VX-4PK"/>
                         <outlet property="gasWarningIcon" destination="BWX-Ql-Lqb" id="IIZ-to-Qyp"/>
+                        <outlet property="lampIcon" destination="VQy-8Y-nbd" id="P51-iX-dAl"/>
                         <outlet property="lampIconView" destination="bJK-as-UMF" id="2Qg-Zu-yRK"/>
                         <outlet property="lampStateLabel" destination="Wg3-An-LYY" id="cCW-aP-iZX"/>
                         <outlet property="lampSwitch" destination="qf6-xt-jMy" id="GM1-7u-CZl"/>
@@ -563,7 +564,7 @@
         <image name="fan" width="24" height="24"/>
         <image name="fire" width="24" height="24"/>
         <image name="frame" width="22" height="22"/>
-        <image name="lamp" width="24" height="24"/>
+        <image name="lamp.off" width="24" height="24"/>
         <image name="pin" width="12" height="12"/>
         <image name="sun" width="24" height="24"/>
         <image name="temperature" width="24" height="24"/>
