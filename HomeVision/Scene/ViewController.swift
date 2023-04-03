@@ -84,7 +84,7 @@ class ViewController: UIViewController {
             }
             guard let value = snapshot?.value else { return }
             let user = User(data: value as! [String : Any])
-            self.nameLabel.text = "hi, \(user?.name.lowercased() ?? "null")"
+            self.nameLabel.text = "hi,\(user?.name.lowercased() ?? "null")"
         })
         
         database.child("home").getData(completion:  { error, snapshot in
@@ -140,29 +140,13 @@ class ViewController: UIViewController {
         }
         viewModel.succesCallback = { [self] in
             self.weather = self.viewModel.weather
-            switch self.weather?.weather?.first?.main {
-            case "Snow":
-                weatherIcon.image = UIImage(named: "snow")
-            case "Rain":
-                weatherIcon.image = UIImage(named: "rain")
-            case "Thunderstorm":
-                weatherIcon.image = UIImage(named: "thunderstorm")
-            case "Drizzle":
-                weatherIcon.image = UIImage(named: "rain.shower")
-            case "Clear":
-                weatherIcon.image = UIImage(named: "sun")
-            case "Mist", "Fog":
-                weatherIcon.image = UIImage(named: "Fog")
-            case "Clouds":
-                weatherIcon.image = UIImage(named: "cloud.broken")
-            default:
-                weatherIcon.image = UIImage(named: "sun")
-            }
+            let icon = WeatherHelper().getWeatherIcon(weatherId: weather?.weather?.first?.id ?? 0)
+            weatherIcon.image = UIImage(named: icon.rawValue)
             weatherIcon.tintColor = UIColor(named: "primary")
             weatherLabel.text = convertKelvinToCelsius(Kelvin: viewModel.weather?.main?.temp ?? 273.15)
             
-            UIView.animate(withDuration: 5.0, delay: 0, options: [.repeat, .curveEaseInOut], animations: {
-                if temperatureLabel.text == convertKelvinToCelsius(Kelvin: viewModel.weather?.main?.temp ?? 273.15) {
+            UIView.animate(withDuration: 5.0, delay: 0, options: [.repeat, .curveEaseInOut], animations: { [self] in
+                if temperatureLabel.text == self.convertKelvinToCelsius(Kelvin: viewModel.weather?.main?.temp ?? 273.15) {
                     self.temperatureLabel.text = String(weather?.main?.humidity ?? 0)
                     self.temperatureIcon.image = UIImage(named: "droplet")
                 } else {
@@ -326,7 +310,7 @@ class ViewController: UIViewController {
                         self.temperatureIcon.image = UIImage(named: "droplet")
                     }, completion: nil)
                 default:
-                    1
+                    self.temperatureLabel.text = "error"
                 }
             }, completion: nil)
     }

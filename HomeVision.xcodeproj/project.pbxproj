@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D514FBB529D5A23100A3F658 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D514FBB429D5A23100A3F658 /* Slider.swift */; };
+		D536494129DABCA200AAD031 /* WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536494029DABCA200AAD031 /* WeatherIcon.swift */; };
 		D54C14EE29D0D8B40011E86B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54C14ED29D0D8B40011E86B /* AppDelegate.swift */; };
 		D54C14F029D0D8B40011E86B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54C14EF29D0D8B40011E86B /* SceneDelegate.swift */; };
 		D54C14F229D0D8B40011E86B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54C14F129D0D8B40011E86B /* ViewController.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		D514FBB429D5A23100A3F658 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
+		D536494029DABCA200AAD031 /* WeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIcon.swift; sourceTree = "<group>"; };
 		D54C14EA29D0D8B40011E86B /* HomeVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54C14ED29D0D8B40011E86B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D54C14EF29D0D8B40011E86B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D536493F29DABC8600AAD031 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				D536494029DABCA200AAD031 /* WeatherIcon.swift */,
+			);
+			name = Enum;
+			sourceTree = "<group>";
+		};
 		D54C14E129D0D8B40011E86B = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				D54C151529D1825F0011E86B /* Extension */,
+				D536493F29DABC8600AAD031 /* Enum */,
 				D55945BB29D46D7A00E2A439 /* LocationManager.swift */,
 			);
 			name = Helper;
@@ -367,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D56D629729D6E90F0055BCDD /* NetworkHelper.swift in Sources */,
+				D536494129DABCA200AAD031 /* WeatherIcon.swift in Sources */,
 				D5DAF34429D18FDA00786E53 /* NetworkManager.swift in Sources */,
 				D54C14F229D0D8B40011E86B /* ViewController.swift in Sources */,
 				D5DAF34929D1905300786E53 /* WeatherManager.swift in Sources */,
