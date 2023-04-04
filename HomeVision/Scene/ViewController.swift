@@ -224,14 +224,15 @@ class ViewController: UIViewController {
                 UIView.animate(withDuration: animationDuration, delay: 0, options: [.curveLinear, .repeat], animations: {
                     self.ventilationIcon.transform = self.ventilationIcon.transform.rotated(by: .pi)
                 })
-                database.child("home").child("ventilation").setValue(true)
+                database.child("home").child("ventilation").child("isOn").setValue(true)
+                database.child("home").child("ventilation").child("speed").setValue(round(ventilationSlider.value))
                 
             } else {
                 ventilationSwitch.isOn = false
                 ventilationSlider.isEnabled = false
                 ventilationStateLabel.text = "off"
                 ventilationIcon.layer.removeAllAnimations()
-                database.child("home").child("ventilation").setValue(false)
+                database.child("home").child("ventilation").child("isOn").setValue(false)
             }
         case "camera":
             if isOn {
