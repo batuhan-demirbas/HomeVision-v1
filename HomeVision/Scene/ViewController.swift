@@ -77,7 +77,10 @@ class ViewController: UIViewController {
 
         ventilationSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
         
-        database.child("user").getData(completion:  { error, snapshot in
+        let userRef = database.child("user")
+        let homeRef = database.child("home")
+        
+        userRef.getData(completion:  { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return
@@ -87,7 +90,7 @@ class ViewController: UIViewController {
             self.nameLabel.text = "hi,\(user?.name.lowercased() ?? "null")"
         })
         
-        database.child("home").getData(completion:  { error, snapshot in
+        homeRef.getData(completion:  { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return
@@ -97,15 +100,17 @@ class ViewController: UIViewController {
             self.temperatureLabel.text = "\(Int(home?.temperature ?? 0))°C"
             self.setState(sensorType: "gas" , isOn: home?.gas ?? false)
             self.setState(sensorType: "lamp", isOn: home?.lamp ?? false)
-            self.setState(sensorType: "ventilation", isOn: home?.ventilation ?? false)
+            self.setState(sensorType: "ventilation", isOn: home?.ventilation.isOn ?? false)
             self.setState(sensorType: "camera", isOn: home?.camera ?? false)
+            
         })
         
-        database.child("user").child("name").observe(.value) { snapshot in
+        
+        userRef.child("name").observe(.value) { snapshot in
             self.nameLabel.text = "hi, \((snapshot.value as? String)?.lowercased() ?? "null")"
         }
         
-        database.child("home").child("gas").observe(.value) { snapshot in
+        homeRef.child("gas").observe(.value) { snapshot in
             if (snapshot.value) as! Int  == 1 {
                 self.setState(sensorType: "gas", isOn: true)
             } else {
@@ -113,15 +118,15 @@ class ViewController: UIViewController {
             }
         }
         
-        database.child("home").child("temperature").observe(.value) { snapshot in
+        homeRef.child("temperature").observe(.value) { snapshot in
             self.temperature = snapshot.value as! Int
         }
         
-        database.child("home").child("humidity").observe(.value) { snapshot in
+        homeRef.child("humidity").observe(.value) { snapshot in
             self.humidity = snapshot.value as! Int
         }
         
-        database.child("home").child("camera").observe(.value) { snapshot in
+        homeRef.child("camera").observe(.value) { snapshot in
             if (snapshot.value) as! Int  == 1 {
                 self.setState(sensorType: "camera", isOn: true)
             } else {
@@ -144,16 +149,6 @@ class ViewController: UIViewController {
             weatherIcon.image = UIImage(named: icon.rawValue)
             weatherIcon.tintColor = UIColor(named: "primary")
             weatherLabel.text = convertKelvinToCelsius(Kelvin: viewModel.weather?.main?.temp ?? 273.15)
-            
-            UIView.animate(withDuration: 5.0, delay: 0, options: [.repeat, .curveEaseInOut], animations: { [self] in
-                if temperatureLabel.text == self.convertKelvinToCelsius(Kelvin: viewModel.weather?.main?.temp ?? 273.15) {
-                    self.temperatureLabel.text = String(weather?.main?.humidity ?? 0)
-                    self.temperatureIcon.image = UIImage(named: "droplet")
-                } else {
-                    temperatureLabel.text = convertKelvinToCelsius(Kelvin: viewModel.weather?.main?.temp ?? 273.15)
-                    self.temperatureIcon.image = UIImage(named: "temperature")
-                }
-            })
             
         }
     }
@@ -205,18 +200,20 @@ class ViewController: UIViewController {
                 gasWarningIcon.isHidden = true
             }
         case "lamp":
+            let lampRef = database.child("home/lamp")
             if isOn {
                 lampIcon.image = UIImage(named: "lamp.on")
                 lampSwitch.isOn = true
                 lampStateLabel.text = "on"
-                database.child("home").child("lamp").setValue(true)
+                lampRef.setValue(true)
             } else {
                 lampIcon.image = UIImage(named: "lamp.off")
                 lampSwitch.isOn = false
                 lampStateLabel.text = "off"
-                database.child("home").child("lamp").setValue(false)
+                lampRef.setValue(false)
             }
         case "ventilation":
+            let ventilationRef = database.child("home/ventilation")
             if isOn {
                 ventilationSwitch.isOn = true
                 ventilationSlider.isEnabled = true
@@ -224,15 +221,14 @@ class ViewController: UIViewController {
                 UIView.animate(withDuration: animationDuration, delay: 0, options: [.curveLinear, .repeat], animations: {
                     self.ventilationIcon.transform = self.ventilationIcon.transform.rotated(by: .pi)
                 })
-                database.child("home").child("ventilation").child("isOn").setValue(true)
-                database.child("home").child("ventilation").child("speed").setValue(round(ventilationSlider.value))
+                ventilationRef.setValue(["isOn": true, "speed": round(ventilationSlider.value)])
                 
             } else {
                 ventilationSwitch.isOn = false
                 ventilationSlider.isEnabled = false
                 ventilationStateLabel.text = "off"
                 ventilationIcon.layer.removeAllAnimations()
-                database.child("home").child("ventilation").child("isOn").setValue(false)
+                ventilationRef.setValue(["isOn": false, "speed": round(ventilationSlider.value)])
             }
         case "camera":
             if isOn {
