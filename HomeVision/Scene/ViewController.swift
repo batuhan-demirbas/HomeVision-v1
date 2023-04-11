@@ -63,7 +63,8 @@ class ViewController: UIViewController {
         city = defaults.string(forKey: "City") ?? "ankara"
         lat = defaults.string(forKey: "Lat") ?? "39,9249354"
         lon = defaults.string(forKey: "Lon") ?? "32,8366406"
-        locationButton.titleLabel?.text = city?.capitalized
+        locationButton.setTitle(city?.capitalized, for:.normal)
+        locationButton.layer.cornerRadius = locationButton.layer.frame.height / 2
         
         locationManager = CLLocationManager()
         locationManager?.delegate = self
@@ -74,7 +75,7 @@ class ViewController: UIViewController {
         dayLabel.text = formattedDateAndDay.day
         
         timer = Timer.scheduledTimer(timeInterval: 7.0, target: self, selector: #selector(updateWeather), userInfo: nil, repeats: true)
-
+        
         ventilationSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
         
         let userRef = database.child("user")
@@ -202,7 +203,7 @@ class ViewController: UIViewController {
         case "lamp":
             let lampRef = database.child("home/lamp")
             if isOn {
-                lampIcon.image = UIImage(named: "lamp.on")
+                lampIcon.image = UIImage(named: "lamp.off")
                 lampSwitch.isOn = true
                 lampStateLabel.text = "on"
                 lampRef.setValue(true)
@@ -291,25 +292,25 @@ class ViewController: UIViewController {
     
     @objc func updateWeather() {
         // Metni ve resmi güncelle
-            currentIndex = (currentIndex + 1) % 2
-            
-            // Animasyonlu şekilde metni ve resmi güncelle
+        currentIndex = (currentIndex + 1) % 2
+        
+        // Animasyonlu şekilde metni ve resmi güncelle
         UIView.transition(with: temperatureLabel, duration: 0.7, options: [.transitionCrossDissolve], animations: {
-                switch self.currentIndex {
-                case 0:
-                    self.temperatureLabel.text = String(self.temperature).addDegreeSymbol()
-                    UIView.transition(with: self.temperatureIcon, duration: 0.7, options: [.transitionCrossDissolve], animations: {
-                        self.temperatureIcon.image = UIImage(named: "temperature")
-                    }, completion: nil)
-                case 1:
-                    self.temperatureLabel.text = "%" + String(self.humidity)
-                    UIView.transition(with: self.temperatureIcon, duration: 0.7, options: [.transitionCrossDissolve], animations: {
-                        self.temperatureIcon.image = UIImage(named: "droplet")
-                    }, completion: nil)
-                default:
-                    self.temperatureLabel.text = "error"
-                }
-            }, completion: nil)
+            switch self.currentIndex {
+            case 0:
+                self.temperatureLabel.text = String(self.temperature).addDegreeSymbol()
+                UIView.transition(with: self.temperatureIcon, duration: 0.7, options: [.transitionCrossDissolve], animations: {
+                    self.temperatureIcon.image = UIImage(named: "temperature")
+                }, completion: nil)
+            case 1:
+                self.temperatureLabel.text = "%" + String(self.humidity)
+                UIView.transition(with: self.temperatureIcon, duration: 0.7, options: [.transitionCrossDissolve], animations: {
+                    self.temperatureIcon.image = UIImage(named: "droplet")
+                }, completion: nil)
+            default:
+                self.temperatureLabel.text = "error"
+            }
+        }, completion: nil)
     }
     
 }
