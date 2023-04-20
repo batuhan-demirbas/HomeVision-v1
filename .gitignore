@@ -70,3 +70,11 @@ fastlane/screenshots
 # Package directories
 .idea/
 .project
+
+# .gitignore
+
+# GoogleService-Info.plist dosyasını gizle
+GoogleService-Info.plist
+
+# API anahtarlarını içeren dosyayı gizle (ör. keys.plist)
+NetworkHelper.swift
