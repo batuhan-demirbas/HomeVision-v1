@@ -78,3 +78,5 @@ GoogleService-Info.plist
 
 # API anahtarlarını içeren dosyayı gizle (ör. keys.plist)
 NetworkHelper.swift
+HomeVision/Network/Core/NetworkHelper.swift
+HomeVision/GoogleService-Info.plist

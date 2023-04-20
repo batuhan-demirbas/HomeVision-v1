@@ -538,7 +538,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U4CM69XWB9;
+				DEVELOPMENT_TEAM = H29T6V7L4C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HomeVision/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to show it on the map.";
@@ -572,7 +572,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U4CM69XWB9;
+				DEVELOPMENT_TEAM = H29T6V7L4C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HomeVision/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs your location to show it on the map.";
