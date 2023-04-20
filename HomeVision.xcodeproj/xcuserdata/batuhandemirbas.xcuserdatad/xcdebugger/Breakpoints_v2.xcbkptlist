@@ -3,4 +3,114 @@
    uuid = "288FAC7C-CF07-44D6-8861-9F966D4F5FA9"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B431C08-8036-4CFE-ADAF-7319E2540D9B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeVision/Scene/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "6B431C08-8036-4CFE-ADAF-7319E2540D9B - fe68c6b1bee4b187"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HomeVision.ViewController.cameraStateLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "HomeVision"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/batuhandemirbas/Documents/Swift/HomeVision/HomeVision/Scene/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "6B431C08-8036-4CFE-ADAF-7319E2540D9B - 8fb0539778cb5d8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HomeVision.ViewController.cameraStateLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "HomeVision"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/batuhandemirbas/Documents/Swift/HomeVision/HomeVision/Scene/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "6B431C08-8036-4CFE-ADAF-7319E2540D9B - 666ad0de0624d89a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HomeVision.ViewController.cameraStateLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "HomeVision"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/batuhandemirbas/Documents/Swift/HomeVision/HomeVision/Scene/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "6B431C08-8036-4CFE-ADAF-7319E2540D9B - c06e46750ee4d499"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HomeVision.ViewController.cameraStateLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "HomeVision"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/batuhandemirbas/Documents/Swift/HomeVision/HomeVision/Scene/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "6B431C08-8036-4CFE-ADAF-7319E2540D9B - d6362bc1dd4ff5b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HomeVision.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HomeVision.ViewController"
+                  moduleName = "HomeVision"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/batuhandemirbas/Documents/Swift/HomeVision/HomeVision/Scene/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1256">
+               </Location>
+               <Location
+                  uuid = "6B431C08-8036-4CFE-ADAF-7319E2540D9B - 3f1b319fd0c8b72f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HomeVision.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HomeVision.ViewController&gt;"
+                  moduleName = "HomeVision"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/batuhandemirbas/Documents/Swift/HomeVision/HomeVision/Scene/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1232">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
